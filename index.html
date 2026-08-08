@@ -1,1 +1,46 @@
-<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#091625"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Tabungan Yusuf"><link rel="manifest" href="manifest.json"><link rel="apple-touch-icon" href="icon.svg"><title>Tabungan Pribadi Yusuf</title><link rel="stylesheet" href="style.css"></head><body><div class="app"><header class="topbar"><div><h1>Tabungan Pribadi Yusuf</h1><p>Catatan gaji, bonus, pengeluaran & tabungan — <span id="yearLabel"></span></p></div><div class="balance-badge"><span>TABUNGAN</span><strong id="totalSavingBadge">Rp 0</strong></div></header><main><div class="month-scroller" id="monthScroller"></div><section class="summary-grid"><article class="summary-card income"><span>PEMASUKAN</span><strong id="incomeTotal">Rp 0</strong></article><article class="summary-card expense"><span>PENGELUARAN</span><strong id="expenseTotal">Rp 0</strong></article><article class="summary-card saving"><span>TABUNGAN BULAN INI</span><strong id="savingTotal">Rp 0</strong></article><article class="summary-card all-saving"><span>TOTAL TABUNGAN</span><strong id="allSavingTotal">Rp 0</strong></article></section><section class="panel"><div class="panel-title">GRAFIK 12 BULAN</div><div class="legend"><span><i class="green"></i>Pemasukan</span><span><i class="red"></i>Pengeluaran</span><span><i class="purple"></i>Tabungan</span></div><div class="chart" id="chart"></div></section><section class="panel"><div class="panel-title">RINGKASAN TAHUN <span id="tableYear"></span></div><div class="table-wrap"><table><thead><tr><th>NO</th><th>BULAN</th><th>PEMASUKAN</th><th>PENGELUARAN</th><th>TABUNGAN / INVESTASI</th></tr></thead><tbody id="annualBody"></tbody><tfoot id="annualFoot"></tfoot></table></div></section><section class="entry-grid"><section class="panel"><div class="entry-heading"><h2><i class="dot green"></i>Pemasukan</h2><strong id="monthIncome">Rp 0</strong></div><p class="empty" id="incomeEmpty">Belum ada pemasukan bulan ini.</p><div class="form-row"><select id="incomeType"><option>Gaji</option><option>Bonus</option><option>Pendapatan Lain</option></select><input id="incomeNote" placeholder="Keterangan (opsional)"><input id="incomeAmount" inputmode="numeric" placeholder="Jumlah"><button onclick="addIncome()">Tambah</button></div><div class="transaction-list" id="incomeList"></div></section><section class="panel"><div class="entry-heading"><h2><i class="dot red"></i>Pengeluaran</h2><strong id="monthExpense">Rp 0</strong></div><p class="empty" id="expenseEmpty">Belum ada pengeluaran bulan ini.</p><div class="form-row"><input id="expenseDate" type="date"><input id="expenseCategory" placeholder="Kategori / keterangan"><input id="expenseAmount" inputmode="numeric" placeholder="Jumlah"><button onclick="addExpense()">Tambah</button></div><div class="transaction-list" id="expenseList"></div></section><section class="panel"><div class="entry-heading"><h2><i class="dot purple"></i>Tabungan / Investasi</h2><strong id="monthSaving">Rp 0</strong></div><p class="empty">Tabungan dihitung otomatis dari pemasukan dikurangi pengeluaran.</p><div class="saving-note"><span>Tabungan otomatis</span><strong id="savingFormula">Rp 0</strong></div></section></section></main><footer>Data tersimpan otomatis di perangkat ini. <button onclick="exportData()">Export JSON</button> <button onclick="clearAll()">Hapus Semua Data</button></footer></div><script src="app.js"></script></body></html>
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#091625">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Keuangan Saya">
+<link rel="manifest" href="manifest.json"><link rel="apple-touch-icon" href="icon.svg">
+<title>Keuangan Saya</title><link rel="stylesheet" href="style.css">
+</head>
+<body><div class="app">
+<header class="topbar"><div><h1>Tabungan Pribadi</h1><p>Gaji, bonus, pengeluaran & tabungan — <span id="yearLabel"></span></p></div>
+<div class="balance-badge"><span>TOTAL TABUNGAN</span><strong id="totalSavingBadge">Rp 0</strong></div></header>
+<main>
+<div class="month-scroller" id="monthScroller"></div>
+<section class="summary-grid">
+<article class="summary-card income"><span>PEMASUKAN</span><strong id="incomeTotal">Rp 0</strong></article>
+<article class="summary-card expense"><span>PENGELUARAN</span><strong id="expenseTotal">Rp 0</strong></article>
+<article class="summary-card saving"><span>TABUNGAN BULAN INI</span><strong id="savingTotal">Rp 0</strong></article>
+<article class="summary-card all-saving"><span>TOTAL TABUNGAN</span><strong id="allSavingTotal">Rp 0</strong></article>
+</section>
+<section class="panel"><div class="panel-title">GRAFIK 12 BULAN</div>
+<div class="legend"><span><i class="green"></i>Pemasukan</span><span><i class="red"></i>Pengeluaran</span><span><i class="purple"></i>Tabungan</span></div>
+<div class="chart" id="chart"></div></section>
+<section class="panel"><div class="panel-title">RINGKASAN TAHUN <span id="tableYear"></span></div>
+<div class="table-wrap"><table><thead><tr><th>NO</th><th>BULAN</th><th>PEMASUKAN</th><th>PENGELUARAN</th><th>TABUNGAN / INVESTASI</th></tr></thead>
+<tbody id="annualBody"></tbody><tfoot id="annualFoot"></tfoot></table></div></section>
+<section class="entry-grid">
+<section class="panel entry"><div class="entry-heading"><h2><i class="dot green"></i>Pemasukan</h2><strong id="monthIncome">Rp 0</strong></div>
+<p class="empty" id="incomeEmpty">Belum ada pemasukan bulan ini.</p>
+<div class="form-row"><select id="incomeType"><option>Gaji</option><option>Bonus</option><option>Pendapatan Lain</option></select><input id="incomeNote" placeholder="Keterangan (opsional)"><input id="incomeAmount" inputmode="numeric" placeholder="Jumlah"><button onclick="addIncome()">Tambah</button></div>
+<div class="transaction-list" id="incomeList"></div></section>
+<section class="panel entry"><div class="entry-heading"><h2><i class="dot red"></i>Pengeluaran</h2><strong id="monthExpense">Rp 0</strong></div>
+<p class="empty" id="expenseEmpty">Belum ada pengeluaran bulan ini.</p>
+<div class="form-row"><input id="expenseDate" type="date"><input id="expenseCategory" placeholder="Kategori / keterangan"><input id="expenseAmount" inputmode="numeric" placeholder="Jumlah"><button onclick="addExpense()">Tambah</button></div>
+<div class="transaction-list" id="expenseList"></div></section>
+<section class="panel entry"><div class="entry-heading"><h2><i class="dot purple"></i>Tabungan / Investasi</h2><strong id="monthSaving">Rp 0</strong></div>
+<p class="empty" id="savingEmpty">Belum ada tabungan/investasi bulan ini.</p>
+<div class="form-row"><input id="savingDate" type="date"><input id="savingCategory" placeholder="Jenis / tujuan tabungan"><input id="savingAmount" inputmode="numeric" placeholder="Jumlah"><button onclick="addSaving()">Tambah</button></div>
+<div class="transaction-list" id="savingList"></div></section>
+</section>
+</main>
+<footer>Data tersimpan otomatis di perangkat ini. <button onclick="exportData()">Export JSON</button> <button onclick="clearAll()">Hapus Semua Data</button></footer>
+</div><script src="app.js"></script></body></html>

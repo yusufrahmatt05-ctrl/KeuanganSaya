@@ -1,2 +1,5 @@
-# Keuangan Saya PWA
-Tema dark navy + gold mengikuti referensi. Pemasukan: Gaji/Bonus/Pendapatan lain. Pengeluaran: tanggal/kategori/jumlah. Tabungan otomatis = pemasukan - pengeluaran. Data disimpan localStorage. PWA bisa di-install ke Home Screen iPhone melalui Safari setelah di-host dengan HTTPS.
+# Keuangan Saya PWA v2
+
+Tabungan/Investasi sekarang manual: tambah, edit, hapus. Tidak lagi otomatis dari pemasukan dikurangi pengeluaran.
+
+Upload seluruh isi folder ini ke repository GitHub Pages untuk mengganti versi lama.
