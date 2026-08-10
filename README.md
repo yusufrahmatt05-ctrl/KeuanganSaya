@@ -1,5 +1,11 @@
-# Keuangan Saya PWA v2
+# Keuangan Saya PWA
 
-Tabungan/Investasi sekarang manual: tambah, edit, hapus. Tidak lagi otomatis dari pemasukan dikurangi pengeluaran.
+PWA pencatatan gaji, bonus, pemasukan, pengeluaran, tabungan/investasi.
 
-Upload seluruh isi folder ini ke repository GitHub Pages untuk mengganti versi lama.
+## Logika saldo otomatis
+- Saldo awal tabungan memakai `keuanganYusufSavingsBase` yang sudah tersimpan.
+- Pemasukan baru menambah saldo.
+- Pengeluaran baru mengurangi saldo.
+- Tabungan/investasi manual baru menambah saldo.
+- Laporan pemasukan dan pengeluaran tetap menampilkan angka transaksi masing-masing; tidak dikurangi atau diubah.
+- Transaksi lama yang sudah ada sebelum sistem saldo otomatis tidak dihitung ulang.
