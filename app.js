@@ -5,12 +5,33 @@ let data=JSON.parse(localStorage.getItem("keuanganYusuf")||"[]");
 // Saldo tabungan yang sudah ada sebelum sistem saldo otomatis digunakan.
 // Nilai ini dipertahankan agar data lama tidak dihitung ulang.
 let savingsBase=Number(localStorage.getItem("keuanganYusufSavingsBase"));
+
+// Migrasi dari versi sebelumnya (v4): pertahankan TOTAL TABUNGAN yang sedang tampil,
+// lalu mulai gunakan logika baru: pemasukan tidak memengaruhi tabungan;
+// pengeluaran mengurangi tabungan; tabungan manual menambah tabungan.
+const LOGIC_VERSION=2;
+const storedLogicVersion=Number(localStorage.getItem("keuanganYusufLogicVersion")||0);
+if(storedLogicVersion<LOGIC_VERSION){
+  if(!Number.isFinite(savingsBase)) savingsBase=0;
+  const oldEffect=data.reduce((sum,x)=>{
+    if(!x.balanceApplied)return sum;
+    const amount=Number(x.amount)||0;
+    if(x.type==="income")return sum+amount;
+    if(x.type==="expense")return sum-amount;
+    if(x.type==="saving")return sum+amount;
+    return sum;
+  },0);
+  // Bekukan saldo saat ini sebagai saldo awal versi baru agar angka yang sudah benar
+  // tidak berubah hanya karena pergantian logika.
+  savingsBase+=oldEffect;
+  data=data.map(x=>({...x,balanceApplied:false}));
+  localStorage.setItem("keuanganYusufSavingsBase",String(savingsBase));
+  localStorage.setItem("keuanganYusuf",JSON.stringify(data));
+  localStorage.setItem("keuanganYusufLogicVersion",String(LOGIC_VERSION));
+}
 if(!Number.isFinite(savingsBase)){
-  // Untuk instalasi lama yang belum mempunyai saldo awal, gunakan total tabungan manual yang sudah tercatat.
   savingsBase=data.filter(x=>x.type==="saving").reduce((a,x)=>a+Number(x.amount||0),0);
   localStorage.setItem("keuanganYusufSavingsBase",String(savingsBase));
-  data=data.map(x=>({...x,balanceApplied:false}));
-  localStorage.setItem("keuanganYusuf",JSON.stringify(data));
 }
 
 const rupiah=n=>new Intl.NumberFormat("id-ID",{style:"currency",currency:"IDR",maximumFractionDigits:0}).format(Number(n)||0);
@@ -20,23 +41,26 @@ function save(){localStorage.setItem("keuanganYusuf",JSON.stringify(data));local
 function list(){return data.filter(x=>yOf(x.date)===year&&mOf(x.date)===selectedMonth)}
 function total(type,l=list()){return l.filter(x=>x.type===type).reduce((a,x)=>a+Number(x.amount||0),0)}
 
-// Hanya transaksi yang dibuat setelah sistem saldo otomatis aktif (balanceApplied=true)
-// yang memengaruhi saldo tabungan. Data lama tetap menjadi histori dan tidak dihitung ulang.
+// Logika saldo versi 2:
+// - Pemasukan: hanya dicatat sebagai pemasukan, TIDAK menambah tabungan.
+// - Pengeluaran: mengurangi total tabungan.
+// - Tabungan/investasi manual: menambah total tabungan.
 function effect(x){
   if(!x.balanceApplied)return 0;
   const amount=Number(x.amount)||0;
-  if(x.type==="income")return amount;
+  if(x.type==="income")return 0;
   if(x.type==="expense")return -amount;
   if(x.type==="saving")return amount;
   return 0;
 }
 function savingBalance(){return savingsBase+data.reduce((sum,x)=>sum+effect(x),0)}
-function monthlyBalanceChange(l=list()){return l.reduce((sum,x)=>sum+effect(x),0)}
+function monthlyBalanceChange(l=list()){return l.filter(x=>x.type==="saving"&&x.balanceApplied).reduce((sum,x)=>sum+Number(x.amount||0),0)}
+function monthlySavings(l=list()){return total("saving",l)}
 
 function render(){yearLabel.textContent=year;tableYear.textContent=year;renderMonths();renderSummary();renderChart();renderTable();renderLists()}
 function renderMonths(){monthScroller.innerHTML="";months.forEach((m,i)=>{const b=document.createElement("button");b.className="month "+(i===selectedMonth?"active":"");b.textContent=m;b.onclick=()=>{selectedMonth=i;render()};monthScroller.appendChild(b)})}
 function renderSummary(){
-  const l=list(),inc=total("income",l),exp=total("expense",l),net=monthlyBalanceChange(l);
+  const l=list(),inc=total("income",l),exp=total("expense",l),net=monthlySavings(l);
   incomeTotal.textContent=rupiah(inc);
   expenseTotal.textContent=rupiah(exp);
   savingTotal.textContent=rupiah(net);
@@ -52,7 +76,7 @@ function renderChart(){
   chart.innerHTML="";
   const vals=months.map((_,m)=>{
     const l=data.filter(x=>yOf(x.date)===year&&mOf(x.date)===m);
-    return [total("income",l),total("expense",l),monthlyBalanceChange(l)];
+    return [total("income",l),total("expense",l),monthlySavings(l)];
   });
   const max=Math.max(1,...vals.flat().map(v=>Math.abs(v)));
   vals.forEach((v,i)=>{
@@ -64,7 +88,7 @@ function renderChart(){
 function renderTable(){
   annualBody.innerHTML="";let a=0,b=0,c=0;
   for(let m=0;m<12;m++){
-    const l=data.filter(x=>yOf(x.date)===year&&mOf(x.date)===m),i=total("income",l),e=total("expense",l),s=monthlyBalanceChange(l);
+    const l=data.filter(x=>yOf(x.date)===year&&mOf(x.date)===m),i=total("income",l),e=total("expense",l),s=monthlySavings(l);
     a+=i;b+=e;c+=s;
     annualBody.innerHTML+=`<tr class="${m===selectedMonth?"active":""}"><td>${m+1}</td><td>${fullMonths[m]}</td><td class="green">${rupiah(i)}</td><td class="red">${rupiah(e)}</td><td class="purple">${rupiah(s)}</td></tr>`;
   }
@@ -107,7 +131,7 @@ function addSaving(){
   savingAmount.value="";savingCategory.value="";save();
 }
 function exportData(){
-  const payload={version:4,savingsBase,data};
+  const payload={version:5,logicVersion:LOGIC_VERSION,savingsBase,data};
   const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"}),a=document.createElement("a");
   a.href=URL.createObjectURL(blob);a.download=`keuangan-${year}.json`;a.click();URL.revokeObjectURL(a.href);
 }

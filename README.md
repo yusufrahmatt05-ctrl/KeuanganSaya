@@ -1,11 +1,11 @@
 # Keuangan Saya PWA
 
-PWA pencatatan gaji, bonus, pemasukan, pengeluaran, tabungan/investasi.
+PWA pencatatan gaji, bonus, pemasukan, pengeluaran, dan tabungan/investasi.
 
-## Logika saldo otomatis
-- Saldo awal tabungan memakai `keuanganYusufSavingsBase` yang sudah tersimpan.
-- Pemasukan baru menambah saldo.
-- Pengeluaran baru mengurangi saldo.
-- Tabungan/investasi manual baru menambah saldo.
-- Laporan pemasukan dan pengeluaran tetap menampilkan angka transaksi masing-masing; tidak dikurangi atau diubah.
-- Transaksi lama yang sudah ada sebelum sistem saldo otomatis tidak dihitung ulang.
+## Logika saldo versi 5
+- Pemasukan hanya tercatat di bagian Pemasukan dan **tidak** menambah tabungan otomatis.
+- Pengeluaran tetap tercatat penuh di bagian Pengeluaran dan **mengurangi Total Tabungan**.
+- Tabungan/investasi hanya menambah Total Tabungan ketika nominal dimasukkan secara manual di bagian Tabungan / Investasi.
+- Tabungan bulan ini, grafik tabungan, dan ringkasan tahunan menampilkan **tabungan manual**, bukan selisih pemasukan dikurangi pengeluaran.
+- Rumus saldo: **Total Tabungan = saldo awal + tabungan manual baru - pengeluaran baru**.
+- Saat upgrade dari versi sebelumnya, saldo tabungan yang sedang tampil dipertahankan agar data lama tidak berubah.
