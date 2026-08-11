@@ -2,7 +2,7 @@
 
 PWA pencatatan gaji, bonus, pemasukan, pengeluaran, dan tabungan/investasi.
 
-## Logika saldo versi 6
+## Logika saldo versi 7
 - Pemasukan hanya tercatat di bagian Pemasukan dan **tidak menambah tabungan otomatis**.
 - Pengeluaran tetap tercatat penuh di bagian Pengeluaran dan **mengurangi Total Tabungan**.
 - Tabungan/investasi hanya menambah Total Tabungan ketika nominal dimasukkan manual.
@@ -14,3 +14,10 @@ PWA pencatatan gaji, bonus, pemasukan, pengeluaran, dan tabungan/investasi.
 
 ## Cache
 Service worker dinaikkan ke v6 agar PWA mengambil kode terbaru setelah deployment.
+
+
+### Fitur v7 — Edit Total Tabungan
+- Total Tabungan dapat dikoreksi manual dari kartu TOTAL TABUNGAN atau badge di bagian atas.
+- Saat saldo diedit, histori pemasukan, pengeluaran, dan tabungan manual tetap dipertahankan.
+- Setelah koreksi, pengeluaran tetap mengurangi saldo dan tabungan manual tetap menambah saldo.
+- Pemasukan tetap tidak memengaruhi saldo tabungan.

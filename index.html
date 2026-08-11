@@ -12,14 +12,14 @@
 </head>
 <body><div class="app">
 <header class="topbar"><div><h1>Tabungan Pribadi</h1><p>Gaji, bonus, pengeluaran & tabungan — <span id="yearLabel"></span></p></div>
-<div class="balance-badge"><span>TOTAL TABUNGAN</span><strong id="totalSavingBadge">Rp 0</strong></div></header>
+<button class="balance-badge" type="button" onclick="editTotalSavings()" title="Klik untuk mengedit total tabungan"><span>TOTAL TABUNGAN</span><strong id="totalSavingBadge">Rp 0</strong><small>Edit</small></button></header>
 <main>
 <div class="month-scroller" id="monthScroller"></div>
 <section class="summary-grid">
 <article class="summary-card income"><span>PEMASUKAN</span><strong id="incomeTotal">Rp 0</strong></article>
 <article class="summary-card expense"><span>PENGELUARAN</span><strong id="expenseTotal">Rp 0</strong></article>
 <article class="summary-card saving"><span>TABUNGAN BULAN INI</span><strong id="savingTotal">Rp 0</strong></article>
-<article class="summary-card all-saving"><span>TOTAL TABUNGAN</span><strong id="allSavingTotal">Rp 0</strong></article>
+<article class="summary-card all-saving editable" onclick="editTotalSavings()" title="Klik untuk mengedit total tabungan"><span>TOTAL TABUNGAN</span><strong id="allSavingTotal">Rp 0</strong><small>Klik untuk edit</small></article>
 </section>
 <section class="panel"><div class="panel-title">GRAFIK 12 BULAN</div>
 <div class="legend"><span><i class="green"></i>Pemasukan</span><span><i class="red"></i>Pengeluaran</span><span><i class="purple"></i>Tabungan</span></div>

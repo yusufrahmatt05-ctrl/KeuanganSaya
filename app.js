@@ -4,7 +4,7 @@ let data=JSON.parse(localStorage.getItem("keuanganYusuf")||"[]");
 
 // Versi 6: tanggal transaksi dinormalisasi agar filter bulan/tahun konsisten,
 // terutama pada iPhone/PWA yang dapat berbeda timezone.
-const LOGIC_VERSION=3;
+const LOGIC_VERSION=4;
 let savingsBase=Number(localStorage.getItem("keuanganYusufSavingsBase"));
 const storedLogicVersion=Number(localStorage.getItem("keuanganYusufLogicVersion")||0);
 
@@ -77,6 +77,27 @@ function effect(x){
 }
 function savingBalance(){return savingsBase+data.reduce((sum,x)=>sum+effect(x),0)}
 function monthlySavings(l=list()){return total("saving",l)}
+
+function editTotalSavings(){
+  const current=savingBalance();
+  const raw=prompt("Edit Total Tabungan\n\nMasukkan saldo tabungan saat ini:", String(Math.round(current)));
+  if(raw===null)return;
+  const desired=num(raw);
+  if(!Number.isFinite(desired) || desired<0)return alert("Nominal tabungan tidak valid.");
+
+  // Jadikan angka yang diedit sebagai saldo aktual/base baru.
+  // Efek transaksi yang sudah tercatat tetap dipertahankan sehingga transaksi
+  // berikutnya tetap menambah/mengurangi saldo secara normal.
+  const appliedEffects=data.reduce((sum,x)=>sum+effect(x),0);
+  savingsBase=desired-appliedEffects;
+  if(savingsBase<0 && desired>=0){
+    // Base boleh negatif secara teknis agar saldo aktual tetap persis sesuai
+    // nominal yang dimasukkan user; jangan mengubah histori transaksi.
+  }
+  localStorage.setItem("keuanganYusufSavingsBase",String(savingsBase));
+  render();
+  alert("Total Tabungan berhasil diubah menjadi " + rupiah(desired) + ".");
+}
 
 function render(){
   yearLabel.textContent=year;
@@ -187,11 +208,11 @@ function addSaving(){
   savingAmount.value="";savingCategory.value="";save();
 }
 function exportData(){
-  const payload={version:6,logicVersion:LOGIC_VERSION,savingsBase,data};
+  const payload={version:7,logicVersion:LOGIC_VERSION,savingsBase,data};
   const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"}),a=document.createElement("a");
   a.href=URL.createObjectURL(blob);a.download=`keuangan-${year}.json`;a.click();URL.revokeObjectURL(a.href);
 }
 function clearAll(){if(confirm("Hapus semua data? Tindakan ini tidak bisa dibatalkan.")){data=[];savingsBase=0;save()}}
 function esc(s){return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
-if("serviceWorker"in navigator)navigator.serviceWorker.register("sw.js?v=6").catch(()=>{});
+if("serviceWorker"in navigator)navigator.serviceWorker.register("sw.js?v=7").catch(()=>{});
 render();

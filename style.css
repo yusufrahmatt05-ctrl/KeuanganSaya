@@ -13,3 +13,10 @@ h1{margin:0;font-family:Georgia,serif;font-size:27px}.topbar p{margin:5px 0 0;co
 footer{text-align:center;color:#64758a;font-size:10px;padding-top:16px}footer button{background:transparent;color:#77899f;padding:4px 7px;font-weight:500}
 @media(max-width:800px){.app{padding:14px 12px 55px}.topbar h1{font-size:22px}.summary-grid{grid-template-columns:1fr 1fr}.form-row{grid-template-columns:1fr 1fr}.form-row button{height:38px}.chart{height:160px}.balance-badge{width:70px;height:70px}.balance-badge strong{font-size:9px}}
 @media(max-width:480px){.summary-card{padding:11px}.summary-card strong{font-size:13px}.form-row{grid-template-columns:1fr}.form-row button{height:40px}.panel{padding:12px}}
+
+
+/* v7: total tabungan dapat dikoreksi manual */
+.balance-badge{font:inherit;color:inherit;border:0;cursor:pointer;text-align:center;position:relative;}
+.balance-badge small,.summary-card.editable small{display:block;margin-top:4px;font-size:10px;opacity:.65;}
+.summary-card.editable{cursor:pointer;position:relative;}
+.summary-card.editable:hover,.balance-badge:hover{filter:brightness(1.08);}
