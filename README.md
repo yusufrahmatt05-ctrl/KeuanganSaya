@@ -1,10 +1,14 @@
-# KeuanganSaya PWA v7
+# KeuanganSaya PWA — v7 FINAL
 
-Versi v7 seperti versi sebelumnya, dengan fitur **Edit Total Tabungan**.
+Layout dikembalikan ke versi v7:
+- Header **Tabungan Pribadi**
+- Tidak ada banner besar **TOTAL SALDO KESELURUHAN**
+- Ada kartu Pemasukan, Pengeluaran, Tabungan Bulan Ini, dan Total Tabungan
+- Pemasukan tidak otomatis menambah tabungan
+- Pengeluaran mengurangi total tabungan satu kali
+- Tabungan/Investasi manual menambah total tabungan
+- Total Tabungan dapat diedit manual
+- Data tersimpan di localStorage
+- PWA dapat dipasang ke Home Screen iPhone
 
-Logika:
-- Pemasukan tidak otomatis masuk ke tabungan.
-- Pengeluaran tetap tercatat penuh dan mengurangi total tabungan satu kali.
-- Tabungan/Investasi manual menambah total tabungan.
-- Total Tabungan bisa diedit manual melalui tombol Edit Total Tabungan.
-- Data tersimpan di perangkat melalui localStorage.
+Upload seluruh isi folder ini ke repository GitHub Pages `KeuanganSaya` dan replace file lama.
