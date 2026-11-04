@@ -46,7 +46,7 @@
 <section class="panel">
 <div class="panel-title"><h2>⚙ Pemasukan</h2><button class="edit-total" id="editTotal">✎ Edit Total Tabungan</button></div>
 <form id="incomeForm">
-<input type="date" required><input placeholder="Gaji / bonus / keterangan" required><input type="number" min="0" placeholder="Jumlah" required><button>Tambah</button>
+<input type="date" required><input placeholder="Gaji / bonus / keterangan" required><input type="number" min="0" placeholder="Jumlah" required><button type="submit">Tambah</button>
 </form>
 <div id="incomeList"></div>
 </section>
@@ -54,7 +54,7 @@
 <section class="panel">
 <h2>🔴 Pengeluaran</h2>
 <form id="expenseForm">
-<input type="date" required><input placeholder="Kategori / keterangan" required><input type="number" min="0" placeholder="Jumlah" required><button>Tambah</button>
+<input type="date" required><input placeholder="Kategori / keterangan" required><input type="number" min="0" placeholder="Jumlah" required><button type="submit">Tambah</button>
 </form>
 <p class="hint">Pengeluaran tetap tercatat penuh dan otomatis mengurangi Total Tabungan satu kali.</p>
 <div id="expenseList"></div>
@@ -63,7 +63,7 @@
 <section class="panel">
 <h2>🟣 Tabungan / Investasi</h2>
 <form id="savingForm">
-<input type="date" required><input placeholder="Jenis / tujuan tabungan" required><input type="number" min="0" placeholder="Jumlah" required><button>Tambah</button>
+<input type="date" required><input placeholder="Jenis / tujuan tabungan" required><input type="number" min="0" placeholder="Jumlah" required><button type="submit">Tambah</button>
 </form>
 <div id="savingList"></div>
 </section>
@@ -79,6 +79,6 @@
 <div class="actions"><button value="cancel">Batal</button><button id="saveBalance" value="save">Simpan</button></div>
 </form>
 </dialog>
-<script src="app.js"></script>
+<script src="app.js?v=20261105-submitfix2"></script>
 </body>
 </html>

@@ -41,10 +41,27 @@ function add(t,e){
     ? window.crypto.randomUUID()
     : String(Date.now())+'-'+Math.random().toString(16).slice(2);
   s[t].push({id,date,desc,amount});
-  save();
-  form.reset();
+  try {
+    save();
+    form.reset();
+  } catch (err) {
+    s[t].pop();
+    console.error("Gagal menyimpan ke penyimpanan lokal:", err);
+    alert("Browser gagal menyimpan data. Data formulir tidak dihapus. Coba lagi dan kirim screenshot jika muncul pesan ini.");
+  }
 }
-["income","expense","saving"].forEach(t=>$(t+"Form").addEventListener("submit",e=>add(t,e)));
+// Bind submit handlers centrally so all three forms use the same reliable path.
+document.addEventListener("submit", function(e) {
+  const form = e.target;
+  if (!form || !["incomeForm","expenseForm","savingForm"].includes(form.id)) return;
+  const type = form.id.replace("Form", "");
+  try {
+    add(type, e);
+  } catch (err) {
+    console.error("Gagal menyimpan transaksi:", err);
+    alert("Transaksi belum tersimpan. Coba lagi; jika masih gagal, kirim screenshot pesan ini.");
+  }
+}, true);
 window.del=(t,id)=>{if(confirm("Hapus transaksi ini?")){s[t]=s[t].filter(x=>String(x.id)!==String(id));save();}};
 window.editTx=(t,id)=>{let x=s[t].find(v=>String(v.id)===String(id));if(!x)return;let d=prompt("Tanggal (YYYY-MM-DD)",x.date);if(d===null)return;let desc=prompt("Keterangan",x.desc);if(desc===null)return;let amount=prompt("Jumlah (angka)",String(x.amount));if(amount===null)return;if(!/^\d{4}-\d{2}-\d{2}$/.test(d)||!Number.isFinite(Number(amount))||Number(amount)<0){alert("Tanggal atau jumlah tidak valid.");return;}Object.assign(x,{date:d,desc,amount:Number(amount)});save();};
 $("yearSelect").onchange=e=>{s.year=Number(e.target.value);save();};
