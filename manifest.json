@@ -1,17 +1,1 @@
-{
-  "name": "Keuangan Saya",
-  "short_name": "Keuangan Saya",
-  "start_url": ".",
-  "display": "standalone",
-  "background_color": "#091625",
-  "theme_color": "#091625",
-  "description": "Pencatatan gaji, bonus, pengeluaran dan tabungan.",
-  "icons": [
-    {
-      "src": "icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
-    }
-  ]
-}
+{"name":"Tabungan Pribadi","short_name":"KeuanganSaya","start_url":"./","display":"standalone","background_color":"#081522","theme_color":"#081522","lang":"id-ID","icons":[{"src":"icon.svg","sizes":"any","type":"image/svg+xml"}]}

@@ -1,0 +1,700 @@
+{
+  "version": 7,
+  "logicVersion": 4,
+  "savingsBase": 12805970,
+  "data": [
+    {
+      "id": "0fd6aff2-a474-494f-af4b-1944844dc3ec",
+      "type": "income",
+      "amount": 10129650,
+      "date": "2026-06-01T12:00:00.000Z",
+      "category": "Bonus",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "122009e5-2e03-4f78-8ea4-97e25ba5e923",
+      "type": "income",
+      "amount": 6000000,
+      "date": "2026-06-01T12:00:00.000Z",
+      "category": "Gaji",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "a252d7b5-e3da-4091-8bce-8ae16be322b3",
+      "type": "expense",
+      "amount": 1000000,
+      "date": "2026-06-25T12:00:00.000Z",
+      "category": "Transfer OT",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "ba34686d-29dc-41b6-9cba-e57740dc84cd",
+      "type": "expense",
+      "amount": 1000000,
+      "date": "2026-06-25T12:00:00.000Z",
+      "category": "Beli UM",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "55c7d23d-e45a-4fe4-a855-be75ae9dc408",
+      "type": "expense",
+      "amount": 5000000,
+      "date": "2026-06-25T12:00:00.000Z",
+      "category": "Pegangan Putri",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "2157d813-441f-4071-8abb-f1a9dc3e4c89",
+      "type": "expense",
+      "amount": 294000,
+      "date": "2026-06-25T12:00:00.000Z",
+      "category": "Beli Buah",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "6217e0f6-d323-4e91-843b-5e39ed5478ae",
+      "type": "expense",
+      "amount": 1738000,
+      "date": "2026-06-25T12:00:00.000Z",
+      "category": "Hadiah Aniv 1 Tahun",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "3b314884-502e-478b-90e1-0702d4bbe315",
+      "type": "expense",
+      "amount": 337000,
+      "date": "2026-06-25T12:00:00.000Z",
+      "category": "Beli Bunga",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "bc3f1986-5552-44ec-9698-adcdac380072",
+      "type": "saving",
+      "amount": 4000000,
+      "date": "2026-06-26T12:00:00.000Z",
+      "category": "Tabungan Bulan Juni",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "6d84bfba-2b13-4e9a-8ce1-8b0b6a6c0b95",
+      "type": "income",
+      "amount": 6000000,
+      "date": "2026-07-01T12:00:00.000Z",
+      "category": "Gaji",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "3197bf81-4e2f-4f82-b046-736b95d05417",
+      "type": "expense",
+      "amount": 1000000,
+      "date": "2026-07-25T12:00:00.000Z",
+      "category": "Transfer OT",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "15f321a6-f071-4e07-a597-374d85664471",
+      "type": "expense",
+      "amount": 1000000,
+      "date": "2026-07-25T12:00:00.000Z",
+      "category": "Beli UM",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "b804798c-2873-46cf-831f-33d41ea154f1",
+      "type": "expense",
+      "amount": 436970,
+      "date": "2026-07-25T12:00:00.000Z",
+      "category": "Beli Body Scrub",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "ed9d2665-1266-44f6-bf7c-2519f4af778b",
+      "type": "saving",
+      "amount": 4000000,
+      "date": "2026-07-26T12:00:00.000Z",
+      "category": "Tabungan Bulan Juli",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "4d467b6f-dc25-4a73-ac6c-3ba7029c8535",
+      "type": "saving",
+      "amount": 40424725,
+      "date": "2026-07-26T12:00:00.000Z",
+      "category": "Tabungan Bulan Sebelumnya",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "f9e5896a-9c08-443a-813e-86ccb6447308",
+      "type": "income",
+      "amount": 12500000,
+      "date": "2026-08-01T12:00:00.000Z",
+      "category": "Pendapatan Lain",
+      "note": "Jual Laundry",
+      "balanceApplied": true
+    },
+    {
+      "id": "213988fa-ea5d-43b0-8eb8-59c1c9a5c182",
+      "type": "saving",
+      "amount": 12500000,
+      "date": "2026-08-16T12:00:00.000Z",
+      "category": "Jual Laundry",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "91277721-9cec-44d8-8881-0db5c023d411",
+      "type": "expense",
+      "amount": 200000,
+      "date": "2026-08-18T12:00:00.000Z",
+      "category": "Partisipasi Agustus",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "e025265f-8632-4ba5-947b-3b2ec875a4bc",
+      "type": "expense",
+      "amount": 60920,
+      "date": "2026-08-18T12:00:00.000Z",
+      "category": "Gofood Putri",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "9af7f7b5-31f3-4c44-9b17-6a6a53451fc5",
+      "type": "expense",
+      "amount": 15000,
+      "date": "2026-08-18T12:00:00.000Z",
+      "category": "Langganan I Cloud",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "b41a99ed-d00d-4b44-8647-c306191f1f93",
+      "type": "saving",
+      "amount": 5000000,
+      "date": "2026-08-20T12:00:00.000Z",
+      "category": "Pegangan Putri ",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "4e70dc0b-8d1b-40d0-b49f-3b5de0f04724",
+      "type": "expense",
+      "amount": 65000,
+      "date": "2026-08-21T12:00:00.000Z",
+      "category": "Bayar Langganan Netflix",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "1aaa8654-9807-4360-ae9d-93bc6e3af7dd",
+      "type": "expense",
+      "amount": 48000,
+      "date": "2026-08-25T12:00:00.000Z",
+      "category": "Top Up Efootball",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "75102528-40c5-401e-a028-70c94ff3cdc5",
+      "type": "income",
+      "amount": 6000000,
+      "date": "2026-08-01T12:00:00.000Z",
+      "category": "Gaji",
+      "note": "Gaji Bulan Agustus",
+      "balanceApplied": true
+    },
+    {
+      "id": "0cca2986-9387-4db1-92aa-72dc2a0f64a3",
+      "type": "saving",
+      "amount": 4000000,
+      "date": "2026-08-26T12:00:00.000Z",
+      "category": "Tabungan Bulan Agustus",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "c567d003-2a71-4d2a-b7f7-860ff1dd4e74",
+      "type": "saving",
+      "amount": 1000000,
+      "date": "2026-08-26T12:00:00.000Z",
+      "category": "Tabungan",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "83138bd5-0ad0-44cc-b593-0c30cddd15ac",
+      "type": "expense",
+      "amount": 890000,
+      "date": "2026-08-26T12:00:00.000Z",
+      "category": "Beli UM",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "53d04548-2453-4a1b-a5bf-628c0e5dd209",
+      "type": "expense",
+      "amount": 524000,
+      "date": "2026-08-26T12:00:00.000Z",
+      "category": "Treatment Putri",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "f0135bd7-be24-4d0d-a5e7-27b29e994a49",
+      "type": "expense",
+      "amount": 1000000,
+      "date": "2026-08-26T12:00:00.000Z",
+      "category": "Transfer OT",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "e885ed59-5236-4bed-9b45-998fab48dba4",
+      "type": "income",
+      "amount": 14493900,
+      "date": "2026-08-01T12:00:00.000Z",
+      "category": "Bonus",
+      "note": "Bonus DDP Agustus",
+      "balanceApplied": true
+    },
+    {
+      "id": "cc6ed602-f9cb-4726-aa59-2b2f0130db7e",
+      "type": "saving",
+      "amount": 14493900,
+      "date": "2026-08-28T12:00:00.000Z",
+      "category": "Tabungan",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "0c46766b-c9de-4009-aa04-40dbc513863d",
+      "type": "income",
+      "amount": 10259111,
+      "date": "2026-07-01T12:00:00.000Z",
+      "category": "Bonus",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "4dbac902-3c17-4a64-914c-2b378abbc4e5",
+      "type": "expense",
+      "amount": 162880,
+      "date": "2026-08-28T12:00:00.000Z",
+      "category": "Beli Pizza Mamah",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "567faa4f-7ab2-4414-ac92-8f479b4ea630",
+      "type": "expense",
+      "amount": 203502,
+      "date": "2026-08-28T12:00:00.000Z",
+      "category": "Beli Pizza Putri",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "181e4231-cd14-4043-b914-14e554764ee2",
+      "type": "expense",
+      "amount": 1299000,
+      "date": "2026-08-31T12:00:00.000Z",
+      "category": "Hadiah Ulang Tahun Putri",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "548a3f35-2f71-4c1c-91e2-ced84d1eed33",
+      "type": "expense",
+      "amount": 116550,
+      "date": "2026-09-01T12:00:00.000Z",
+      "category": "Gofood Putri",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "9a2cbbda-bfda-4d73-b90c-ff63a7eb6c63",
+      "type": "expense",
+      "amount": 39000,
+      "date": "2026-09-02T12:00:00.000Z",
+      "category": "Langganan LokTV",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "d886250d-deaf-43eb-ae80-e16e161a5c6a",
+      "type": "expense",
+      "amount": 21500,
+      "date": "2026-09-06T12:00:00.000Z",
+      "category": "Beli Pulsa",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "9f9c2884-2fc0-4a36-935f-7bdaf152b6f0",
+      "type": "expense",
+      "amount": 109342,
+      "date": "2026-09-07T12:00:00.000Z",
+      "category": "Beli Esim",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "954ee6ac-bc12-4fc6-8f21-97a98b83986d",
+      "type": "expense",
+      "amount": 265000,
+      "date": "2026-09-09T12:00:00.000Z",
+      "category": "Tes Redotpay",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "359985e0-6e37-40e0-a673-9892673b6e04",
+      "type": "expense",
+      "amount": 881000,
+      "date": "2026-09-13T12:00:00.000Z",
+      "category": "Beli USDT ",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "5b4721fc-1680-4f86-9709-1ecb4b980abe",
+      "type": "expense",
+      "amount": 56355,
+      "date": "2026-09-15T12:00:00.000Z",
+      "category": "Beli Esim Vietnam",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "daf3e7ea-f006-4209-bfa3-ab8c608b5400",
+      "type": "expense",
+      "amount": 107842,
+      "date": "2026-09-15T12:00:00.000Z",
+      "category": "Beli Esim Malaysia",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "0cb51e9c-229c-40bd-be15-579425d0f618",
+      "type": "expense",
+      "amount": 110000,
+      "date": "2026-09-29T12:00:00.000Z",
+      "category": "Topup Tokocrypto",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "52c7ece5-e995-40f3-9713-312bb85b2612",
+      "type": "expense",
+      "amount": 1000000,
+      "date": "2026-09-21T12:00:00.000Z",
+      "category": "Bayar Hotel",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "d417072e-5d4c-4d5f-8c58-6de489f336f1",
+      "type": "expense",
+      "amount": 65000,
+      "date": "2026-09-21T12:00:00.000Z",
+      "category": "Bayar Netflix",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "c8bae620-f6ff-428b-a920-72e1c755a219",
+      "type": "expense",
+      "amount": 50000,
+      "date": "2026-09-23T12:00:00.000Z",
+      "category": "Beli Esim",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "5994fe1f-5c12-4296-b201-da16e13f396e",
+      "type": "expense",
+      "amount": 98691,
+      "date": "2026-09-23T12:00:00.000Z",
+      "category": "Beli Coklat Putri",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "5edf9258-a102-41ce-afb4-a3937cd3ed1c",
+      "type": "income",
+      "amount": 6000000,
+      "date": "2026-09-01T12:00:00.000Z",
+      "category": "Gaji",
+      "note": "Gaji Bulan September",
+      "balanceApplied": true
+    },
+    {
+      "id": "fd61f26c-7144-4121-8771-2ac67f10d73f",
+      "type": "saving",
+      "amount": 6000000,
+      "date": "2026-09-25T12:00:00.000Z",
+      "category": "Tabungan Bulan September",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "7bfc6073-0cf8-48fc-a97d-14060e46ad34",
+      "type": "expense",
+      "amount": 896000,
+      "date": "2026-09-26T12:00:00.000Z",
+      "category": "Beli Ringgit",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "efdd5e88-ef6a-4653-a4cd-a7faa0b2f9fd",
+      "type": "expense",
+      "amount": 53000,
+      "date": "2026-09-29T12:00:00.000Z",
+      "category": "Beli Esim",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "93d4954c-9e5e-4ddd-a7cc-2457317a34b8",
+      "type": "expense",
+      "amount": 1000000,
+      "date": "2026-09-27T12:00:00.000Z",
+      "category": "Transfer OT",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "2d03b107-ef85-4608-8aac-6bc1b7345f10",
+      "type": "expense",
+      "amount": 1000000,
+      "date": "2026-09-27T12:00:00.000Z",
+      "category": "Bayar Jastip",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "44a746b0-5222-4540-99b4-5246a8b48aae",
+      "type": "saving",
+      "amount": 17966131,
+      "date": "2026-09-30T12:00:00.000Z",
+      "category": "Tabungan Bulan September ",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "c4cc9cd5-7dc9-40cc-b080-81c0712b9569",
+      "type": "income",
+      "amount": 17966131,
+      "date": "2026-09-01T12:00:00.000Z",
+      "category": "Gaji",
+      "note": "Bonus Bulan September ",
+      "balanceApplied": true
+    },
+    {
+      "id": "4bed4661-64c3-49f8-aedd-608cadc5bbd5",
+      "type": "expense",
+      "amount": 200000,
+      "date": "2026-10-01T12:00:00.000Z",
+      "category": "Kasih Teteh",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "c748061d-406d-40d2-b5ce-c37eb97d0056",
+      "type": "expense",
+      "amount": 120000,
+      "date": "2026-10-01T12:00:00.000Z",
+      "category": "Makanan Mamah ",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "7b64ffa1-d06b-4848-b9ea-76af2de1a9bc",
+      "type": "expense",
+      "amount": 2654000,
+      "date": "2026-10-01T12:00:00.000Z",
+      "category": "Treatment Putri",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "566861f6-ea44-433f-a6bb-15736c20948f",
+      "type": "expense",
+      "amount": 170000,
+      "date": "2026-10-02T12:00:00.000Z",
+      "category": "Beli akun E football",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "be8d4218-191e-48d3-b61c-c4b715bb20b3",
+      "type": "expense",
+      "amount": 27000,
+      "date": "2026-10-03T12:00:00.000Z",
+      "category": "Langganan ",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "207a4863-a563-49ed-8162-1bfea1cf4140",
+      "type": "expense",
+      "amount": 65760,
+      "date": "2026-10-15T12:00:00.000Z",
+      "category": "Beli Esim",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "6fd3a21b-7d9c-4fa3-a116-c77d339e7f17",
+      "type": "expense",
+      "amount": 70000,
+      "date": "2026-10-16T12:00:00.000Z",
+      "category": "Beli Kouta",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "0d2aed9b-c221-4e7c-96e2-29510b6c2325",
+      "type": "income",
+      "amount": 463268,
+      "date": "2026-10-01T12:00:00.000Z",
+      "category": "Pendapatan Lain",
+      "note": "Reimbuse Uang",
+      "balanceApplied": true
+    },
+    {
+      "id": "3ede6110-da7c-4aef-b8e2-e790e6fb6d60",
+      "type": "saving",
+      "amount": 463268,
+      "date": "2026-10-16T12:00:00.000Z",
+      "category": "Reimbuse Uang",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "bf4c5e4a-bd85-4358-af63-8b59aa2a6ea0",
+      "type": "expense",
+      "amount": 950000,
+      "date": "2026-10-17T12:00:00.000Z",
+      "category": "ganti baterai ",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "4065a85c-5306-483f-aa4c-38496df04575",
+      "type": "expense",
+      "amount": 1145000,
+      "date": "2026-10-19T12:00:00.000Z",
+      "category": "Belanja",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "9f220b55-9071-4bac-9c0d-57e6a0d9c483",
+      "type": "expense",
+      "amount": 96900,
+      "date": "2026-10-20T12:00:00.000Z",
+      "category": "Makan Putri",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "f0ff7aaf-f3fb-4400-9391-38a4c5bfd982",
+      "type": "saving",
+      "amount": 6000000,
+      "date": "2026-10-26T12:00:00.000Z",
+      "category": "Tabungan Bulan Oktober",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "e9adb859-f535-4649-995c-352c7d9e1df7",
+      "type": "income",
+      "amount": 6000000,
+      "date": "2026-10-01T12:00:00.000Z",
+      "category": "Gaji",
+      "note": "Gaji Bulan Oktober",
+      "balanceApplied": true
+    },
+    {
+      "id": "c63aa073-568b-41b8-a990-4300bd72a6c6",
+      "type": "expense",
+      "amount": 1000000,
+      "date": "2026-10-27T12:00:00.000Z",
+      "category": "Orang Tua",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "238f14e7-7f60-45ef-bcb4-f47b69402598",
+      "type": "expense",
+      "amount": 1000000,
+      "date": "2026-10-27T12:00:00.000Z",
+      "category": "Makan",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "39c7468b-bd25-42dc-a7f2-3924333dc2ba",
+      "type": "expense",
+      "amount": 856000,
+      "date": "2026-10-31T12:00:00.000Z",
+      "category": "Bayar USDT",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "5bd5f6ad-83be-4d22-a3e5-7764349debfa",
+      "type": "expense",
+      "amount": 128700,
+      "date": "2026-10-31T12:00:00.000Z",
+      "category": "Makan Putri",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "0e3947b9-1e7b-4261-a59d-c50e7f2b8ca2",
+      "type": "saving",
+      "amount": 10355840,
+      "date": "2026-10-31T12:00:00.000Z",
+      "category": "Bonus Bulan Oktober",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "cd3005aa-271c-443c-9933-30f67017c83a",
+      "type": "saving",
+      "amount": 972924,
+      "date": "2026-11-01T12:00:00.000Z",
+      "category": "Reimbuse Uang",
+      "note": "",
+      "balanceApplied": true
+    },
+    {
+      "id": "783923ed-5711-476d-b917-c29d57902163",
+      "type": "expense",
+      "amount": 155000,
+      "date": "2026-11-03T12:00:00.000Z",
+      "category": "Beli Paket",
+      "note": "",
+      "balanceApplied": true
+    }
+  ]
+}
