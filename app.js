@@ -26,8 +26,25 @@ function render(){ $("year").textContent=s.year;$("summaryYear").textContent=s.y
 function renderLists(){["income","expense","saving"].forEach(t=>{let a=cur(s[t]).sort((x,y)=>y.date.localeCompare(x.date));$(t+"List").innerHTML=a.length?a.map(x=>`<div class="item ${t}"><div><b>${esc(x.desc)}</b><small>• ${dt(x.date).toLocaleDateString("id-ID",{day:"numeric",month:"short",year:"numeric"})}</small></div><div><span class="amount">${rp(x.amount)}</span> <button class="del" onclick="editTx('${t}','${esc(x.id)}')">✎</button> <button class="del" onclick="del('${t}','${esc(x.id)}')">×</button></div></div>`).join(""):`<p class="hint">Belum ada data bulan ini.</p>`;});}
 function renderSummary(){let names=["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];$("summary").innerHTML=names.map((n,i)=>{let filt=a=>a.filter(x=>{let d=dt(x.date);return d.getFullYear()===s.year&&d.getMonth()===i;});return `<tr><td>${i+1}</td><td>${n}</td><td>${rp(sum(filt(s.income)))}</td><td>${rp(sum(filt(s.expense)))}</td><td>${rp(sum(filt(s.saving)))}</td></tr>`;}).join("");}
 function renderChart(){let names=["Jan","Feb","Mar","Apr","Mei","Jun","Jul","Agu","Sep","Okt","Nov","Des"];$ ("chart").innerHTML=names.map((n,i)=>{let f=a=>sum(a.filter(x=>{let d=dt(x.date);return d.getFullYear()===s.year&&d.getMonth()===i;}));let vals=[f(s.income),f(s.expense),f(s.saving)],max=Math.max(...vals,1);return `<div class="barset"><div><div class="bar in" style="height:${Math.max(3,vals[0]/max*145)}px"></div></div><div><div class="bar out" style="height:${Math.max(3,vals[1]/max*145)}px"></div></div><div><div class="bar sav" style="height:${Math.max(3,vals[2]/max*145)}px"></div></div><div class="monthlabel">${n}</div></div>`;}).join("");}
-function add(t,f){f.preventDefault();let i=[...f.querySelectorAll("input")];s[t].push({id:crypto.randomUUID?crypto.randomUUID():String(Date.now()+Math.random()),date:i[0].value,desc:i[1].value,amount:+i[2].value});f.reset();save();}
-["income","expense","saving"].forEach(t=>$(t+"Form").onsubmit=e=>add(t,e));
+function add(t,e){
+  e.preventDefault();
+  const form=e.currentTarget;
+  const i=[...form.querySelectorAll('input')];
+  const date=i[0]?.value||'';
+  const desc=(i[1]?.value||'').trim();
+  const amount=Number(i[2]?.value);
+  if(!date||!desc||!Number.isFinite(amount)||amount<=0){
+    alert('Lengkapi tanggal, keterangan, dan jumlah lebih dari 0.');
+    return;
+  }
+  const id=(window.crypto&&typeof window.crypto.randomUUID==='function')
+    ? window.crypto.randomUUID()
+    : String(Date.now())+'-'+Math.random().toString(16).slice(2);
+  s[t].push({id,date,desc,amount});
+  save();
+  form.reset();
+}
+["income","expense","saving"].forEach(t=>$(t+"Form").addEventListener("submit",e=>add(t,e)));
 window.del=(t,id)=>{if(confirm("Hapus transaksi ini?")){s[t]=s[t].filter(x=>String(x.id)!==String(id));save();}};
 window.editTx=(t,id)=>{let x=s[t].find(v=>String(v.id)===String(id));if(!x)return;let d=prompt("Tanggal (YYYY-MM-DD)",x.date);if(d===null)return;let desc=prompt("Keterangan",x.desc);if(desc===null)return;let amount=prompt("Jumlah (angka)",String(x.amount));if(amount===null)return;if(!/^\d{4}-\d{2}-\d{2}$/.test(d)||!Number.isFinite(Number(amount))||Number(amount)<0){alert("Tanggal atau jumlah tidak valid.");return;}Object.assign(x,{date:d,desc,amount:Number(amount)});save();};
 $("yearSelect").onchange=e=>{s.year=Number(e.target.value);save();};
